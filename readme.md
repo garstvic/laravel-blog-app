@@ -18,11 +18,12 @@ $ rm -rf laravel
 
 $ sudo vim /etc/apache2/sites-enabled/001-cloud9.conf
 
-// Change this line
-DocumentRoot /home/ubuntu/workspace
+    // Change this line
+    DocumentRoot /home/ubuntu/workspace
 
-// To following
-DocumentRoot /home/ubuntu/workspace/public
+    // To following
+    DocumentRoot /home/ubuntu/workspace/public
+
 $ sudo composer update
 
 // DB
@@ -31,15 +32,16 @@ $ mysql-ctl install
 
 $ c9 .env
 
-// Change this lines
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+    // Change this lines
+    DB_DATABASE=homestead
+    DB_USERNAME=homestead
+    DB_PASSWORD=secret
 
-// To following
-DB_DATABASE=c9
-DB_USERNAME={{ Root User Name from output of command 'mysql-ctl isntall'}}
-DB_PASSWORD=
+    // To following
+    DB_DATABASE=c9
+    DB_USERNAME={{ Root User Name from output of command 'mysql-ctl isntall'}}
+    DB_PASSWORD=
+
 $ phpmyadmin-ctl install
 
 $ mysql-ctl start
