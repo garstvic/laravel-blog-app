@@ -10,7 +10,7 @@
         <div class="card">
             <header>
                 <nav>
-                    <li><a href="{{ route('admin.index') }}" class="btn">New Post</a></li>
+                    <li><a href="{{ route('admin.blog.create_post') }}" class="btn">New Post</a></li>
                     <li><a href="{{ route('admin.index') }}" class="btn">Show all Posts</a></li>
                 </nav>
             </header>

@@ -157,10 +157,15 @@ header.top-nav a:active {
     padding: 0;
 }
 
-.card section il {
+.card section li {
     border: .1rem solid #ccc;
     margin: .8rem 0;
     padding: .8rem;
+}
+
+.info {
+    color: #aaa;
+    font-size: 1.4rem;
 }
 
 .edit ul {
@@ -168,10 +173,10 @@ header.top-nav a:active {
     margin: 0 !important;
 }
 .edit li {
-    border: none;
+    border: none !important;
     display: inline-block;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .edit a {
@@ -189,7 +194,7 @@ header.top-nav a:active {
     
 }
 
-.list-article {
+.list article {
     background-color: white;
     border: .1rem solid black;
     margin: 3.2rem 0;
