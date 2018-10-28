@@ -1,0 +1,32 @@
+.modal {
+    background-color: whitesmoke;
+    border: .1rem solid black;
+    border-radius: .5rem;
+    display: none;
+    left: calc(50% - 30rem);
+    padding: 1.6rem;
+    position: fixed;
+    top: 10%;
+    transition: top .8s;
+    width: 60rem;
+    z-index: 1000;
+}
+
+.modal h1,
+.modal h3 {
+    margin: 0;
+}
+
+.modal .btn {
+    float: right;
+    margin-left: .8rem;
+}
+
+.modal-background {
+    background-color: rgba(90, 86, 91, .5);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
