@@ -1,0 +1,144 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #ad67d2;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #8900c6;
+}
+
+h3 {
+    margin: 0;
+}
+
+.main {
+    margin: 3.2rem auto;
+    width: 70rem;
+}
+
+.btn {
+    color: white;
+    background-color: #8900c6;
+    border: .1rem solid #8900c6;
+    border-radius: .3rem;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: .4rem .6rem;
+    transition: background-color .3s;
+}
+
+.btn.danger {
+    color: #e5003c;
+    background-color: #ffc4be;
+    border: .1rem solid #c5003c;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+    background-color: #e5003c;
+    color: white;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: white;
+    color: #8900c6;
+}
+
+.social-slider {
+    background-color: #ad67d2;
+    box-shadow: .1rem .1rem .1rem darkgray;
+    height: 10rem;
+    left: 0;
+    position: fixed;
+    top: 25vh;
+    width: 5rem;
+}
+
+.main-nav {
+    background-color: #ad67d2;
+    border-bottom: .1rem solid lightgray;
+    box-shadow: 0 .2rem .2rem lightgray;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.main-nav ul,
+.main-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li,
+.main-footer ul li {
+    display: inline-block;
+    padding: 3.2rem 1.6rem;
+    transition: background-color .2s;
+}
+
+.main-nav li:hover {
+    background-color: white; 
+}
+
+.main-nav a {
+    color: white;
+    transition: all .2s;
+}
+
+.main-nav li:hover a,
+.main-nav li:active a,
+.main-nav a:hover,
+.main-nav a:active {
+    color: #ad67d2;
+}
+
+.active {
+    background-color: white;
+}
+
+.active a {
+    color: #ad67d2;
+}
+
+.main-footer {
+    font-size: 1.4rem;
+    padding: 3.2rem;
+    text-align: center;
+}
+
+.blog-post {
+    border: .2rem solid #ad67d2;
+    border-radius: .8rem 0 .8rem .8rem;
+    margin-bottom: 3.2rem;
+    padding: 1.6rem;
+}
+
+.subtitle {
+    color: darkgray;
+    font-size: 1.4rem;
+}
+
+.pagination {
+    font-size: 2.8rem;
+}
+
+.pagination a {
+    padding: 0 1.6rem;
+}
+
+#contact-form input {
+    width: 66%;
+}

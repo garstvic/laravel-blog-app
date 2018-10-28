@@ -1,0 +1,20 @@
+.info-box {
+    border-radius: .3rem;
+    margin: auto;
+    max-width: 25rem;
+    padding: 1.6rem;
+    text-align: left;
+    width: auto;
+}
+
+.info-box.fail {
+    background-color: #ffc4be;
+    border: .1rem solid #e5003c;
+    color: #e5003c;
+}
+
+.info-box.success {
+    background-color:  #e2ffa9;
+    border: .1rem solid green;
+    color: green;
+}
