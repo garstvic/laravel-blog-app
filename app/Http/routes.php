@@ -64,6 +64,11 @@ Route::group([
         'as' => 'admin.blog.create_post'
     ]);
     
+    Route::post('/blog/category/create', [
+        'uses' => 'CategoryController@postCreateCategory',
+        'as' => 'admin.blog.category.create'
+    ]);
+    
     Route::post('/blog/post/create', [
         'uses' => 'PostController@postCreatePost',
         'as' => 'admin.blog.post.create'

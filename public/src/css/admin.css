@@ -210,10 +210,9 @@ header.top-nav a:active {
 }
 
 #category-admin form input:focus {
-    border: .1rem solid #0863d3;
     box-shadow: none;
-    outline: none;
-    padding: 0 .4rem;
+    outline: .1rem solid #0863d3;
+    padding: 0;
 }
 
 #category-admin form button,

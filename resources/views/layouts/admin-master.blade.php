@@ -12,7 +12,7 @@
     @include('includes.admin-header')
     @yield('content')
     <script type="text/javascript">
-        var baseUrl = "{{ URL::secure('/') }}";
+        var baseUrl = "{{ URL::to('/') }}";
     </script>
     @yield('scripts')
 </body>
