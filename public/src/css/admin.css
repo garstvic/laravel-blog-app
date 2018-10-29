@@ -194,6 +194,10 @@ header.top-nav a:active {
     
 }
 
+.list li {
+    list-style: none;
+}
+
 .list article {
     background-color: white;
     border: .1rem solid black;
