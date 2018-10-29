@@ -8,6 +8,7 @@ var docReady = setInterval(function() {
     
     for (var i = 0; i < editSections.length; i = i + 1) {
         editSections[i].firstElementChild.firstElementChild.children[1].firstChild.addEventListener('click', startEdit);
+        editSections[i].firstElementChild.firstElementChild.children[2].firstChild.addEventListener('click', startDelete);
     }
     
     document.getElementsByClassName('btn')[0].addEventListener('click', createNewCategory)
@@ -78,6 +79,33 @@ function endEdit(params, success, responseObj) {
     }, 310);
     event.target.removeEventListener('click', saveEdit);
     event.target.addEventListener('click', startEdit);
+}
+
+function startDelete(event) {
+    // Open Modal to ask if user is sure
+    
+    deleteCategory(event);
+}
+
+function deleteCategory(event) {
+    event.preventDefault();
+    
+    event.target.removeEventListener('click', startDelete);
+    var categoryId = event.path[4].previousElementSibling.dataset['id'];
+    
+    ajax('GET', '/admin/blog/category/' + categoryId + '/delete', null, categoryDelete, [event.path[5]]);;
+}
+
+function categoryDelete(params, success, pesponseObj) {
+    var article = params[0];
+    
+    if (success) {
+        article.style.background = '#ffc4be';
+        setTimeout(function() {
+            article.remove();
+            location.reload();
+        }, 300);
+    }
 }
 
 function ajax(method, url, params, callback, callbackParams) {
