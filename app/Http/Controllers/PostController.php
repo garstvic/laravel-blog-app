@@ -28,8 +28,13 @@ class PostController extends Controller
     
     public function getSinglePost($post_id, $side = 'frontend')
     {
-        // Fetch the post
-        return view($side . '.blog.index');
+        $post = Post::find($post_id);
+        
+        if (!$post) {
+            return redirect()->route('blog.index')->with(['fail' => 'Post not found!']);
+        }
+        
+        return view($side . '.blog.single', ['post' => $post]);
     }
     
     public function getCreatePost()

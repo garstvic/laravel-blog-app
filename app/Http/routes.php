@@ -21,7 +21,7 @@ Route::get('/blog', [
     'as' => 'blog.index'
 ]);
 
-Route::get('/blog/{post_id}', [
+Route::get('/blog/{post_id}&{side}', [
     'uses' => 'PostController@getSinglePost',
     'as' => 'blog.single'
 ]);
@@ -47,6 +47,11 @@ Route::group([
     Route::get('/blog/posts', [
         'uses' => 'PostController@getPostIndex',
         'as' => 'admin.blog.index'
+    ]);
+    
+    Route::get('blog/post/{post_id}&{side}', [
+        'uses' => 'PostController@getSinglePost',
+        'as' => 'admin.blog.post'
     ]);
     
     Route::get('/blog/posts/create', [

@@ -21,7 +21,7 @@ a {
 }
 
 a:hover,
-a:article {
+a:active {
     color: #86c3ff;
 }
 

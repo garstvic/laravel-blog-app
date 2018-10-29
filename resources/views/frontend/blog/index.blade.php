@@ -9,13 +9,14 @@
 @endsection
 
 @section('content')
+    @include('includes.info-box')
     @if(count($posts) > 0)
         @foreach($posts as $post)
             <article class="blog-post">
                 <h3>{{ $post->title }}</h3>
                 <span class="subtitle">{{ $post->author }} || {{ $post->created_at }}</span>
                 <p>{{ $post->body }}</p>
-                <a href="#">Read more</a>
+                <a href="{{ route('blog.single', ['post_id' => $post->id, 'side' => 'frontend']) }}">Read more</a>
             </article>
         @endforeach
     @else
