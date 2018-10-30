@@ -46,7 +46,7 @@
         <div class="card">
             <header>
                 <nav>
-                    <li><a href="{{ route('admin.index') }}" class="btn">Show all Messages</a></li>
+                    <li><a href="{{ route('admin.contact.index') }}" class="btn">Show all Messages</a></li>
                 </nav>
             </header>
             <section>
@@ -56,7 +56,7 @@
                     @else
                         @foreach($contact_messages as $contact_message)
                             <li>
-                                <article data-message="{{ $contact_message->body }}" data-id="{{ $contact_message->id }}">
+                                <article data-message="{{ $contact_message->body }}" data-id="{{ $contact_message->id }}" class="contact-message">
                                     <div class="message-info">
                                         <h3>{{ $contact_message->subject }}</h3>
                                         <span class="info">Sender: {{ $contact_message->sender }} | {{ $contact_message->created_at }}</span>

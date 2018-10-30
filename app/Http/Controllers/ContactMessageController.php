@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facedes\Response;
+
 use App\ContactMessage;
 use App\Events\MessageSend;
 
@@ -41,5 +43,13 @@ class ContactMessageController extends Controller
         $contact_messages = ContactMessage::orderBy('created_at', 'desc')->paginate(5);
         
         return view('admin.info.contact_messages', ['contact_messages' => $contact_messages]);
+    }
+    
+    public function getDeleteMessage($message_id)
+    {
+        $contact_message = ContactMessage::find($message_id);
+        $contact_message->delete();
+        
+        return Response(['message' => 'Message deleted!'], 200);
     }
 }

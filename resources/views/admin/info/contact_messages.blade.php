@@ -39,10 +39,13 @@
             </section>
         @endif
     </div>    
+    <div class="modal" id="contact-message-info">
+        <button class="btn" id="modal-close">Close</button>
+    </div>    
 @endsection
 
 
-@section('script')
+@section('scripts')
     <script type="text/javascript">
         var token = "{{ Session::token() }}";
     </script>
