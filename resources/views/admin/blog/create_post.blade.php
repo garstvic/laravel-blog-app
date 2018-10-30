@@ -42,5 +42,5 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ URL::secure('src/js/post.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::secure('src/js/posts.js') }}"></script>
 @endsection
