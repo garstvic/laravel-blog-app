@@ -51,27 +51,27 @@
             </header>
             <section>
                 <ul>
-                    <!-- If no Messages... -->
-                    @if(true)
+                    @if(count($contact_messages) == 0)
                         <li>No Messages!</li>
-                    <!-- If Messages -->
                     @else
-                        <li>
-                            <article data-message="Body" data-id="ID">
-                                <div class="message-info">
-                                    <h3>Message Subject</h3>
-                                    <span class="info">Sender: ...</span>
-                                </div>
-                                <div class="edit">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="{{ route('admin.index') }}">View Message</a></li>
-                                            <li><a href="{{ route('admin.index') }}" class="danger">Delete</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </article>
-                        </li>
+                        @foreach($contact_messages as $contact_message)
+                            <li>
+                                <article data-message="{{ $contact_message->body }}" data-id="{{ $contact_message->id }}">
+                                    <div class="message-info">
+                                        <h3>{{ $contact_message->subject }}</h3>
+                                        <span class="info">Sender: {{ $contact_message->sender }} | {{ $contact_message->created_at }}</span>
+                                    </div>
+                                    <div class="edit">
+                                        <nav>
+                                            <ul>
+                                                <li><a href="{{ route('admin.index') }}">View Message</a></li>
+                                                <li><a href="{{ route('admin.index') }}" class="danger">Delete</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </article>
+                            </li>
+                        @endforeach
                     @endif
                 </ul>
             </section>
