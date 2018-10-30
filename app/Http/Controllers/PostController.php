@@ -40,18 +40,28 @@ class PostController extends Controller
     public function getUpdatePost($post_id)
     {
         $post = Post::find($post_id);
+        $categories = Category::all();
+        $post_categories = $post->categories;
+        $post_categories_ids = [];
+        
+        $i = 0;
+        foreach ($post_categories as $post_category) {
+            $post_categories_ids[$i] = $post_category->id;
+            $i = $i + 1;
+        }
         
         if (!$post) {
             return redirect()->route('blog.index')->with(['fail' => 'Post not found']);
         }
         
-        // Find categories
-        return view('admin.blog.edit_post', ['post' => $post]);
+        return view('admin.blog.edit_post', ['post' => $post, 'categories' => $categories, 'post_categories' => $post_categories, 'post_categories_ids' => $post_categories_ids]);
     }
     
     public function getCreatePost()
     {
-        return view('admin.blog.create_post');
+        $categories = Category::all();
+        
+        return view('admin.blog.create_post', ['categories' => $categories]);
     }
     
     public function postCreatePost(Request $request)

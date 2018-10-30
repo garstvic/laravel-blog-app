@@ -22,15 +22,19 @@
             <div class="input-group">
                 <label for="">Add Categories</label>
                 <select name="select" id="category_select">
-                    <!-- Foreach loop to output categories -->
-                    <option value="Dummy Category" {{ strpos(Request::old('select'), 'Dummy Category') === 0 ? 'selected' : '' }}>Dummy category</option>
-                    <option value="Fake Category" {{ strpos(Request::old('select'), 'Fake Category') === 0 ? 'selected' : '' }}>Fake category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ Request::old('select') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                    @endforeach
                 </select>
                 <button class="btn">Add Category</button>
                 <div class="added-categories">
-                    <ul></ul>
+                    <ul>
+                        @foreach($post_categories as $post_category)
+                            <li><a href="#" data-id="{{ $post_category->id }}">{{ $post_category->name }}</a></li>
+                        @endforeach
+                    </ul>
                 </div>
-                <input type="hidden" name="categories" id="categories">
+                <input type="hidden" name="categories" id="categories" value="{{ implode(',', $post_categories_ids) }}">
             </div>
             <div class="input-group">
                 <label for="Body">Body</label>

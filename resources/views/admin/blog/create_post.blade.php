@@ -19,9 +19,9 @@
             <div class="input-group">
                 <label for="category_select">Add Categories</label>
                 <select name="select" id="category_select">
-                    <!-- Foreach loop to output categories -->
-                    <option value="Dummy Category"{{ strpos(Request::old('select'), 'Dummy Category') === 0 ? 'selected' : '' }}>Dummy category</option>
-                    <option value="Fake Category" {{ strpos(Request::old('select'), 'Fake Category') === 0 ? 'selected' : '' }}>Fake category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ Request::old('select') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                    @endforeach 
                 </select>
                 <button class="btn" type="button">Add Category</button>
                 <div class="added-categories">
