@@ -26,7 +26,7 @@
     @endif
     @if($posts->lastPage() > 1)
         <section class="pagination">
-            @if($posts->currentPage !== 1)
+            @if($posts->currentPage() !== 1)
                 <a href="{{ $posts->previousPageUrl() }}"><i class="fa fa-caret-left"></i></a>
             @endif
             @if($posts->currentPage() !== $posts->lastPage())

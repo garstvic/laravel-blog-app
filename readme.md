@@ -56,7 +56,7 @@ $ git clone https://github.com/garstvic/laravel-blog-app.git
 
 $ rsync -avh ./laravel-blog-app/ ./
 
-$ rm -rf ./laravel-quotes-app
+$ rm -rf ./laravel-blog-app
 
 $ composer dump-autoload
 

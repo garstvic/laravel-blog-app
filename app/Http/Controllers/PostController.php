@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function getBlogIndex($side = 'frontend')
     {
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         
         foreach($posts as $post) {
             $post->body = $this->shortenText($post->body, 20);
